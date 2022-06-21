@@ -9,7 +9,7 @@ import Photo from 'assets/components/Photo';
 // utilities
 import axiosInstance from 'assets/utilities/axiosInstance';
 import AlbumPhotoPropType from 'assets/prop-shapes/AlbumPhoto';
-import photosStub from 'assets/stub/album-1-photos.json';
+// import photosStub from 'assets/stub/album-1-photos.json';
 
 // css
 import styles from 'styles/pages/index.module.scss';
@@ -34,13 +34,18 @@ Home.propTypes = {
 };
 
 export async function getServerSideProps() {
-  // const res = await axiosInstance.get('/shows');
+  try {
+    const res = await axiosInstance.get('/album/1/photos');
 
-  return {
-    props: {
-      photos: photosStub,
-    },
-  };
+    return {
+      props: {
+        // photos: photosStub,
+        photos: res.data,
+      },
+    };
+  } catch (e) {
+    return { notFound: true };
+  }
 }
 
 export default Home;
