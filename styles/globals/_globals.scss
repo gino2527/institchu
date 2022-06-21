@@ -1,0 +1,22 @@
+@import './mixins';
+
+.flex-column {
+  @include gapped-flexbox();
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-row {
+  @include gapped-flexbox();
+  display: flex;
+  flex-direction: row;
+}
+
+.clickable {
+  cursor: pointer;
+}
+
+.title-text {
+  font-size: 24px;
+  font-weight: bold;
+}

@@ -1,0 +1,11 @@
+@mixin gapped-flexbox {
+  &--gapped {
+    gap: var(--data-gap, 1px);
+  }
+}
+
+@mixin text-ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

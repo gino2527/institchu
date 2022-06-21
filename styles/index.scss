@@ -1,0 +1,17 @@
+@import './globals/index';
+
+html {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  --spacing: 36px;
+  background: $lightgray;
+  padding: var(--spacing);
+  margin: 0;
+  
+  #__next {
+    margin-bottom: var(--spacing);
+  }
+}
